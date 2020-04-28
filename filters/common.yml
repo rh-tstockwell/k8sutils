@@ -5,6 +5,8 @@
 - command: delete
   path: metadata.generation
 - command: delete
+  path: metadata.labels.template
+- command: delete
   path: metadata.namespace
 - command: delete
   path: metadata.resourceVersion

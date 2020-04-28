@@ -1,2 +1,4 @@
 - command: delete
   path: spec.clusterIP
+- command: delete
+  path: metadata.annotations[template.openshift.io/expose-uri]
