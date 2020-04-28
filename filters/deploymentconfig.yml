@@ -1,0 +1,8 @@
+- command: delete
+  path: spec.template.metadata.annotations[openshift.io/generated-by]
+- command: delete
+  path: spec.template.metadata.creationTimestamp
+- command: delete
+  path: spec.template.spec.containers[*].image
+- command: delete
+  path: spec.triggers[*].imageChangeParams.lastTriggeredImage

@@ -1,0 +1,16 @@
+- command: delete
+  path: metadata.annotations[openshift.io/generated-by]
+- command: delete
+  path: metadata.creationTimestamp
+- command: delete
+  path: metadata.generation
+- command: delete
+  path: metadata.namespace
+- command: delete
+  path: metadata.resourceVersion
+- command: delete
+  path: metadata.selfLink
+- command: delete
+  path: metadata.uid
+- command: delete
+  path: status

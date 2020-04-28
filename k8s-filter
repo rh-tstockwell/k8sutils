@@ -1,0 +1,17 @@
+#!/bin/bash
+
+SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" >/dev/null 2>&1 && pwd )"
+
+file=$1
+
+if [[ -z "$file" ]]; then
+    echo "Usage: $0 <file>"
+    exit 1
+fi
+
+kind="$(yq read "$file" kind | tr '[:upper:]' '[:lower:]')"
+
+yq write -i -s "$SCRIPT_DIR/filters/common.yml" "$file"
+
+[[ -f ""$SCRIPT_DIR/filters/$kind.yml"" ]] && yq write -i -s "$SCRIPT_DIR/filters/$kind.yml" "$file"
+

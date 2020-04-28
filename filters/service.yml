@@ -1,0 +1,2 @@
+- command: delete
+  path: spec.clusterIP
