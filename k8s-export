@@ -1,0 +1,16 @@
+#!/bin/bash
+
+
+name="$1"
+output="${2:-.k8s/resources}"
+resources="buildconfig deploymentconfig service route configmap persistentvolumeclaim"
+
+if [[ -z "$name" ]]; then
+    echo "Usage: $0 <resource_name> [<output_dir>]"
+    exit 1
+fi
+
+for resource in $resources; do
+    yaml=$(oc get -o yaml $resource/$name --ignore-not-found)
+    [[ -z "$yaml" ]] || echo "$yaml" > "$output/$resource.yml"
+done
