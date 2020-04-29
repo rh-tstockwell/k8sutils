@@ -10,6 +10,7 @@ if [[ -z "$name" ]]; then
     exit 1
 fi
 
+mkdir -p "$output"
 for resource in $resources; do
     yaml=$(oc get -o yaml $resource/$name --ignore-not-found)
     [[ -z "$yaml" ]] || echo "$yaml" > "$output/$resource.yml"
