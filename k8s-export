@@ -3,7 +3,7 @@
 
 name="$1"
 output="${2:-.k8s/resources}"
-resources="buildconfig deploymentconfig service route configmap persistentvolumeclaim"
+resources="buildconfig deploymentconfig service route configmap persistentvolumeclaim imagestream"
 
 if [[ -z "$name" ]]; then
     echo "Usage: $0 <resource_name> [<output_dir>]"
