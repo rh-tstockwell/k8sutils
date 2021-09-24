@@ -1,2 +1,0 @@
-- command: delete
-  path: spec.triggers[*].imageChange.lastTriggeredImageID

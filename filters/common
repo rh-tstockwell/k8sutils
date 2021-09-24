@@ -1,0 +1,6 @@
+del(.metadata.annotations."openshift.io/generated-by") |
+del(.metadata.creationTimestamp) |
+del(.metadata.generation) |
+del(.metadata.resourceVersion) |
+del(.metadata.uid) |
+del(.status)

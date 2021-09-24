@@ -1,0 +1,5 @@
+del(.metadata.annotations"template.openshift.io/expose-uri") |
+del(.spec.clusterIP) |
+del(.spec.clusterIPs) |
+del(.spec.ipFamilies) |
+del(.spec.ipFamilyPolicy)

@@ -1,5 +1,0 @@
-
-# spec.host will use the default {name}-{namespace}.apps.{cluster} route if none is specified
-# that's good enough for us for now and saves me worrying about sanitised cluster URLs
-- command: delete
-  path: spec.host

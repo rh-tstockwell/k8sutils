@@ -1,0 +1,5 @@
+del(.metadata.annotations."pv.kubernetes.io/bind-completed") |
+del(.metadata.annotations."pv.kubernetes.io/bound-by-controller") |
+del(.metadata.annotations."volume.beta.kubernetes.io/storage-provisioner") |
+del(.metadata.annotations."volume.kubernetes.io/selected-node") |
+del(.spec.volumeName)

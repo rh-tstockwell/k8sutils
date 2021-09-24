@@ -1,0 +1,3 @@
+del(.metadata.annotations."deployment.kubernetes.io/revision") |
+del(.spec.template.metadata.annotations."openshift.io/generated-by") |
+del(.spec.template.metadata.creationTimestamp)

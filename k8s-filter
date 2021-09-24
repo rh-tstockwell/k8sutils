@@ -8,8 +8,7 @@ if [[ -z "$@" ]]; then
 fi
 
 for file in "$@"; do
-    kind="$(yq read "$file" kind | tr '[:upper:]' '[:lower:]')"
-    yq write -i -s "$SCRIPT_DIR/filters/common.yml" "$file"
-    [[ -f ""$SCRIPT_DIR/filters/$kind.yml"" ]] && yq write -i -s "$SCRIPT_DIR/filters/$kind.yml" "$file"
+    kind="$(cat "$file" | yq e '.kind' - | tr '[:upper:]' '[:lower:]')"
+    cat "$file" | yq e "$(cat $SCRIPT_DIR/filters/common)" - > "$file"
+    [[ -f "$SCRIPT_DIR/filters/$kind" ]] && cat "$file" | yq e "$(cat $SCRIPT_DIR/filters/$kind)" - > "$file"
 done
-
